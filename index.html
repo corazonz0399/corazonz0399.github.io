@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gilang Aji Purnomo — Meta Ads Specialist</title>
+    <meta name="description" content="Portfolio Gilang Aji Purnomo — Meta Ads Specialist & Digital Marketer. Spesialisasi campaign scaling, creative generation, dan Facebook Ads optimization.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-card-hover: #1a1a2e;
+            --accent: #6c5ce7;
+            --accent-light: #a29bfe;
+            --accent-gradient: linear-gradient(135deg, #6c5ce7, #fd79a8);
+            --text: #e4e4e7;
+            --text-muted: #888899;
+            --border: #1e1e30;
+            --success: #00b894;
+            --warning: #fdcb6e;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1rem 2rem;
+            background: rgba(10,10,15,0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        nav .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        nav .links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        nav .links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav .links a:hover { color: var(--text); }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(108,92,231,0.08), transparent 70%);
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 0.35rem 1rem;
+            border-radius: 100px;
+            background: rgba(108,92,231,0.15);
+            border: 1px solid rgba(108,92,231,0.3);
+            color: var(--accent-light);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+        .hero-stats .stat h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text);
+        }
+        .hero-stats .stat p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.85rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(108,92,231,0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+            margin-left: 1rem;
+        }
+        .btn-outline:hover {
+            border-color: var(--accent);
+            background: rgba(108,92,231,0.1);
+        }
+
+        /* Section */
+        section { padding: 5rem 0; }
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-light);
+            margin-bottom: 1rem;
+        }
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .section-sub {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .about-grid .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.5rem;
+        }
+        .skills-list span {
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            background: rgba(108,92,231,0.1);
+            border: 1px solid rgba(108,92,231,0.2);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--accent-light);
+        }
+        .expertise-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+        .expertise-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .expertise-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Campaigns */
+        .campaign-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.2rem;
+        }
+        .campaign-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+        .campaign-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            background: var(--bg-card-hover);
+        }
+        .campaign-card .tag {
+            display: inline-block;
+            padding: 0.2rem 0.7rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            background: rgba(0,184,148,0.15);
+            color: var(--success);
+            margin-bottom: 0.8rem;
+        }
+        .campaign-card h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+        .campaign-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+        .campaign-card .metric {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid var(--border);
+        }
+        .campaign-card .metric span:first-child {
+            color: var(--text-muted);
+        }
+        .campaign-card .metric span:last-child {
+            font-weight: 700;
+            color: var(--text);
+        }
+        .campaign-card .metric .good { color: var(--success); }
+        .campaign-card .metric .warn { color: var(--warning); }
+
+        /* Contact */
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .contact-card p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .contact-links a {
+            padding: 0.7rem 1.5rem;
+            border-radius: 10px;
+            background: rgba(108,92,231,0.1);
+            border: 1px solid rgba(108,92,231,0.2);
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .contact-links a:hover {
+            background: rgba(108,92,231,0.2);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            nav .links { display: none; }
+            .about-grid { grid-template-columns: 1fr; }
+            .expertise-grid { grid-template-columns: 1fr; }
+            .hero-stats { gap: 1.5rem; }
+            .contact-card { padding: 2rem 1.5rem; }
+            .btn-outline { margin-left: 0; margin-top: 1rem; display: inline-block; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">Gilang Aji Purnomo</div>
+            <ul class="links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#campaigns">Campaigns</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-badge">✦ Meta Ads Specialist</div>
+            <h1>Ngiklan <span>Gak Pake Mikir</span>,<br>Data yang Bicara</h1>
+            <p>Spesialisasi Facebook & Instagram Ads — campaign structuring, creative generation, budget scaling, dan daily optimization untuk brand Generos dan klien lainnya.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>Rp500JT+</h3>
+                    <p>Total Ad Spend</p>
+                </div>
+                <div class="stat">
+                    <h3>50+</h3>
+                    <p>Campaigns Managed</p>
+                </div>
+                <div class="stat">
+                    <h3>4</h3>
+                    <p>Active Ad Accounts</p>
+                </div>
+            </div>
+            <div>
+                <a href="#campaigns" class="btn btn-primary">Lihat Campaigns →</a>
+                <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-label">— About</div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 class="section-title">Digital Marketer<br>yang Suka <span style="background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Ngoprek Data</span></h2>
+                    <p>Halo, saya <strong>Gilang Aji Purnomo</strong>. Saya berkecimpung di dunia digital marketing sejak 2021, dengan fokus utama di Meta Ads (Facebook & Instagram Ads).</p>
+                    <p>Saya percaya <em>data-driven decision</em> adalah kunci. Setiap rupiah belanja iklan harus bisa dipertanggungjawabkan — dari CPC, CTR, sampai cost per result. Gak ada istilah "coba-coba" tanpa evaluasi.</p>
+                    <p>Brand utama yang saya handle: <strong>Generos</strong> — multivitamin alami Indonesia. Saya mengelola 4 akun iklan sekaligus dengan metode <strong>Gayatri Framework</strong> untuk campaign scaling yang sustain.</p>
+                    <div class="skills-list">
+                        <span>Meta Ads</span>
+                        <span>Facebook Ads</span>
+                        <span>Instagram Ads</span>
+                        <span>Campaign Scaling</span>
+                        <span>Creative Strategy</span>
+                        <span>Data Analysis</span>
+                        <span>CRO</span>
+                        <span>Pixel Tracking</span>
+                        <span>Automation</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="expertise-card">
+                        <h4>🎯 Spesialisasi</h4>
+                        <p>Campaign structure & scaling, audience targeting, A/B testing, creative performance analysis, dan budget optimization harian.</p>
+                        <div class="expertise-grid">
+                            <div>
+                                <h4 style="font-size:0.85rem;color:var(--accent-light);margin-bottom:0.25rem;">Lead Generation</h4>
+                                <p style="font-size:0.8rem;">Facebook Lead Ads untuk akuisisi prospek</p>
+                            </div>
+                            <div>
+                                <h4 style="font-size:0.85rem;color:var(--accent-light);margin-bottom:0.25rem;">Conversion (ATC)</h4>
+                                <p style="font-size:0.8rem;">Add to Cart campaign untuk penjualan</p>
+                            </div>
+                            <div>
+                                <h4 style="font-size:0.85rem;color:var(--accent-light);margin-bottom:0.25rem;">Creative Strategy</h4>
+                                <p style="font-size:0.8rem;">Image & copy yang convert tinggi</p>
+                            </div>
+                            <div>
+                                <h4 style="font-size:0.85rem;color:var(--accent-light);margin-bottom:0.25rem;">Daily Eval</h4>
+                                <p style="font-size:0.8rem;">Evaluasi harian otomatis via Hermes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="campaigns">
+        <div class="container">
+            <div class="section-label">— Campaigns</div>
+            <h2 class="section-title">Beberapa Campaign<br>yang Pernah Dijalankan</h2>
+            <p class="section-sub">Data real dari akun ADV Gilang - Generos (act_327433619915012). Angka bisa berubah setiap hari.</p>
+            <div class="campaign-grid" id="campaign-list">
+                <div class="campaign-card">
+                    <div class="tag">⚡ ACTIVE</div>
+                    <h4>CBO Sales 1 30/06</h4>
+                    <p>CBO campaign — conversion, ATC. Broad targeting Indonesia. Daily budget otomatis diatur Meta.</p>
+                    <div class="metric">
+                        <span>Spend / Day</span>
+                        <span>Rp150.000</span>
+                    </div>
+                    <div class="metric">
+                        <span>CPATC</span>
+                        <span class="good">~Rp85.000</span>
+                    </div>
+                </div>
+                <div class="campaign-card">
+                    <div class="tag">⚡ ACTIVE</div>
+                    <h4>Fase 1 — D1 Prospecting</h4>
+                    <p>Fase pertama Gayatri Method. Prospecting ke cold audience. CBO Rp200rb/hari.</p>
+                    <div class="metric">
+                        <span>Spend / Day</span>
+                        <span>Rp200.000</span>
+                    </div>
+                    <div class="metric">
+                        <span>CPATC</span>
+                        <span class="good">~Rp72.000</span>
+                    </div>
+                </div>
+                <div class="campaign-card">
+                    <div class="tag">⚡ ACTIVE</div>
+                    <h4>Dailyleveling — Interest Core</h4>
+                    <p>ABO campaign untuk retarget interest-based audience. Level 3 — Rp360rb/hari.</p>
+                    <div class="metric">
+                        <span>Spend / Day</span>
+                        <span>Rp360.000</span>
+                    </div>
+                    <div class="metric">
+                        <span>CPATC</span>
+                        <span class="good">~Rp120.000</span>
+                    </div>
+                </div>
+                <div class="campaign-card">
+                    <div class="tag" style="background:rgba(253,203,110,0.15);color:var(--warning);">⏸ PAUSED</div>
+                    <h4>Prospek 3 — Lead Gen</h4>
+                    <p>Testing campaign lead generation dengan berbagai creative. Daily budget Rp150rb.</p>
+                    <div class="metric">
+                        <span>Spend / Day</span>
+                        <span>Rp150.000</span>
+                    </div>
+                    <div class="metric">
+                        <span>CPL</span>
+                        <span class="good">~Rp5.000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="padding-bottom:3rem;">
+        <div class="container">
+            <div class="contact-card">
+                <h3>Mau Kita Ngobrol?</h3>
+                <p>Ada project iklan yang mau didiskusikan? Atau sekedar kenalan? Yuk reach out!</p>
+                <div class="contact-links">
+                    <a href="mailto:gilangajipurnomo@gmail.com">✉️ Email</a>
+                    <a href="https://wa.me/6281234567890">💬 WhatsApp</a>
+                    <a href="https://instagram.com/gilangads">📸 Instagram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            © 2026 Gilang Aji Purnomo — Built with ❤️ by Hermes
+        </div>
+    </footer>
+</body>
+</html>
