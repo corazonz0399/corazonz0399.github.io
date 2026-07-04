@@ -238,6 +238,19 @@
             margin-top: 1.5rem;
         }
 
+        /* Timeline */
+        .timeline { position: relative; max-width: 650px; margin: 0 auto; padding-left: 30px; }
+        .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--accent), rgba(108,92,231,0.1)); }
+        .tl-item { position: relative; margin-bottom: 2rem; }
+        .tl-dot { position: absolute; left: -26px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg-card); border: 2px solid var(--accent); z-index: 1; }
+        .tl-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem 1.5rem; transition: all 0.3s; }
+        .tl-card:hover { border-color: var(--accent); transform: translateX(4px); }
+        .tl-date { font-size: 0.75rem; font-weight: 700; color: var(--accent-light); letter-spacing: 0.5px; }
+        .tl-card h4 { font-size: 1rem; margin: 0.3rem 0; }
+        .tl-card p { font-size: 0.85rem; color: var(--text-muted); }
+        .tl-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.6rem; }
+        .tl-tags span { padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: rgba(108,92,231,0.1); color: var(--accent-light); border: 1px solid rgba(108,92,231,0.15); }
+
         /* Sales 2025 */
         .sales-kpi { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
         .kpi-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; text-align: center; }
@@ -372,6 +385,7 @@
             <div class="logo">Gilang Aji Purnomo</div>
             <ul class="links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#career">Career</a></li>
                 <li><a href="#sales">Sales 2025</a></li>
                 <li><a href="#campaigns">Campaigns</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -386,16 +400,16 @@
             <p>Spesialisasi Facebook & Instagram Ads — campaign structuring, creative generation, budget scaling, dan daily optimization untuk brand Generos dan klien lainnya.</p>
             <div class="hero-stats">
                 <div class="stat">
-                    <h3>Rp500JT+</h3>
-                    <p>Total Ad Spend</p>
+                    <h3>Rp840JT+</h3>
+                    <p>Total Omzet Tertinggi</p>
                 </div>
                 <div class="stat">
-                    <h3>50+</h3>
-                    <p>Campaigns Managed</p>
+                    <h3>4+ Tahun</h3>
+                    <p>Pengalaman Ads</p>
                 </div>
                 <div class="stat">
-                    <h3>4</h3>
-                    <p>Active Ad Accounts</p>
+                    <h3>Rp15-20JT</h3>
+                    <p>Budget Ads / Hari</p>
                 </div>
             </div>
             <div>
@@ -413,7 +427,8 @@
                     <h2 class="section-title">Digital Marketer<br>yang Suka <span style="background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Ngoprek Data</span></h2>
                     <p>Halo, saya <strong>Gilang Aji Purnomo</strong>. Saya berkecimpung di dunia digital marketing sejak 2021, dengan fokus utama di Meta Ads (Facebook & Instagram Ads).</p>
                     <p>Saya percaya <em>data-driven decision</em> adalah kunci. Setiap rupiah belanja iklan harus bisa dipertanggungjawabkan — dari CPC, CTR, sampai cost per result. Gak ada istilah "coba-coba" tanpa evaluasi.</p>
-                    <p>Brand utama yang saya handle: <strong>Generos</strong> — multivitamin alami Indonesia. Saya mengelola 4 akun iklan sekaligus dengan metode <strong>Gayatri Framework</strong> untuk campaign scaling yang sustain.</p>
+                    <p>Saat ini saya mengelola 4 akun Meta Ads untuk <strong>Generos</strong> dengan total budget Rp15-20 juta per hari, mencapai omzet harian Rp20-25 juta. Sebelumnya saya <strong>Meta Advertiser Leader</strong> di PT. Quantum King Sulaiman, membukukan omzet Rp840 juta dari budget Rp600 juta.</p>
+                    <p>Saya lulusan S1 Sistem Informasi Universitas Amikom Purwokerto (IPK 3,78) dan sudah berkecimpung di digital marketing sejak 2021.</p>
                     <div class="skills-list">
                         <span>Meta Ads</span>
                         <span>Facebook Ads</span>
@@ -448,6 +463,63 @@
                                 <p style="font-size:0.8rem;">Evaluasi harian otomatis via Hermes</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="career" style="padding-bottom:2rem;">
+        <div class="container">
+            <div class="section-label">— Career</div>
+            <h2 class="section-title">Perjalanan <span style="background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Karir</span></h2>
+            <p class="section-sub">Dari Social Media Advertiser sampai handle 4 akun dengan total budget Rp15-20 juta/hari.</p>
+            <div class="timeline">
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <span class="tl-date">Mar 2021 – Jul 2021</span>
+                        <h4>Social Media Advertiser</h4>
+                        <p>PT. Tekno Karya Nusa — NUJEK Purwokerto</p>
+                        <div class="tl-tags"><span>Fanpage Boost</span><span>Instagram Design</span></div>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <span class="tl-date">Agu 2022 – Nov 2023</span>
+                        <h4>Advertiser</h4>
+                        <p>PT. Ethos Kreatif Indonesia</p>
+                        <div class="tl-tags"><span>Campaign Creation</span><span>Landing Page</span><span>Daily Evaluation</span></div>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <span class="tl-date">Des 2023 – Jan 2026</span>
+                        <h4>Meta Advertiser Leader</h4>
+                        <p>PT. Quantum King Sulaiman</p>
+                        <div class="tl-tags"><span>Team Lead</span><span>Budget Planning</span><span>Reporting</span></div>
+                        <p style="margin-top:0.5rem;font-size:0.8rem;color:var(--success);">🏆 Omzet Rp840 jt dari Rp600 jt budget FB Ads</p>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot" style="background:var(--accent);box-shadow:0 0 12px rgba(108,92,231,0.6);"></div>
+                    <div class="tl-card" style="border-color:rgba(108,92,231,0.4);">
+                        <span class="tl-date" style="color:var(--accent);">Jan 2026 — Sekarang</span>
+                        <h4>Full Meta Advertiser</h4>
+                        <p>PT. Quantum King Sulaiman</p>
+                        <div class="tl-tags"><span>4 Akun</span><span>Budget Rp15-20jt/hari</span><span>AI Optimization</span></div>
+                        <p style="margin-top:0.5rem;font-size:0.8rem;color:var(--accent-light);">⚡ Omset harian Rp20-25jt</p>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot" style="background:var(--warning);"></div>
+                    <div class="tl-card" style="border-color:rgba(253,203,110,0.3);">
+                        <span class="tl-date" style="color:var(--warning);">Jun 2026 — Sekarang</span>
+                        <h4>Freelance Dropship</h4>
+                        <p>Self-employed</p>
+                        <div class="tl-tags"><span>Product Research</span><span>Store Management</span><span>Marketing Strategy</span></div>
                     </div>
                 </div>
             </div>
