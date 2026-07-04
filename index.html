@@ -328,6 +328,12 @@
             .tl-card:hover { transform: translateX(4px); box-shadow: none; }
         }
 
+        /* Profile Photo */
+        .photo-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 1rem; text-align: center; transition: all 0.3s; }
+        .photo-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+        .profile-photo { width: 100%; max-width: 280px; border-radius: 20px; display: block; margin: 0 auto; border: 2px solid var(--border); }
+        .photo-caption { margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted); }
+
         /* Sales 2025 */
         .sales-kpi { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
         .kpi-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; text-align: center; }
@@ -518,7 +524,11 @@
                     </div>
                 </div>
                 <div>
-                    <div class="expertise-card">
+                    <div class="photo-card">
+                        <img src="gilang-photo.jpg" alt="Gilang Aji Purnomo" class="profile-photo">
+                        <div class="photo-caption">🏃 Etawalin Dieng Run 2024</div>
+                    </div>
+                    <div class="expertise-card" style="margin-top:1.5rem;">
                         <h4>🎯 Spesialisasi</h4>
                         <p>Campaign structure & scaling, audience targeting, A/B testing, creative performance analysis, dan budget optimization harian.</p>
                         <div class="expertise-grid">
