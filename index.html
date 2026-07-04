@@ -238,18 +238,95 @@
             margin-top: 1.5rem;
         }
 
-        /* Timeline */
-        .timeline { position: relative; max-width: 650px; margin: 0 auto; padding-left: 30px; }
-        .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--accent), rgba(108,92,231,0.1)); }
-        .tl-item { position: relative; margin-bottom: 2rem; }
-        .tl-dot { position: absolute; left: -26px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg-card); border: 2px solid var(--accent); z-index: 1; }
-        .tl-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem 1.5rem; transition: all 0.3s; }
-        .tl-card:hover { border-color: var(--accent); transform: translateX(4px); }
-        .tl-date { font-size: 0.75rem; font-weight: 700; color: var(--accent-light); letter-spacing: 0.5px; }
-        .tl-card h4 { font-size: 1rem; margin: 0.3rem 0; }
-        .tl-card p { font-size: 0.85rem; color: var(--text-muted); }
-        .tl-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.6rem; }
-        .tl-tags span { padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: rgba(108,92,231,0.1); color: var(--accent-light); border: 1px solid rgba(108,92,231,0.15); }
+        /* Timeline — Horizontal Desktop, Vertical Mobile */
+        .timeline {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding: 0.5rem 0 1.5rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .tl-item {
+            flex: 0 0 220px;
+            scroll-snap-align: start;
+            position: relative;
+            padding-top: 2rem;
+            text-align: center;
+        }
+        .tl-item::before {
+            content: '';
+            position: absolute;
+            top: 16px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--accent), rgba(108,92,231,0.1));
+            z-index: 0;
+        }
+        .tl-item:first-child::before { left: 50%; }
+        .tl-item:last-child::before { right: 50%; }
+        .tl-dot {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 14px; height: 14px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 2px solid var(--accent);
+            z-index: 1;
+        }
+        .tl-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1rem;
+            transition: all 0.3s;
+            text-align: left;
+            height: 100%;
+        }
+        .tl-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+        .tl-date { font-size: 0.7rem; font-weight: 700; color: var(--accent-light); letter-spacing: 0.5px; }
+        .tl-card h4 { font-size: 0.9rem; margin: 0.3rem 0; }
+        .tl-card p { font-size: 0.8rem; color: var(--text-muted); }
+        .tl-tags { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-top: 0.5rem; }
+        .tl-tags span { padding: 0.15rem 0.5rem; border-radius: 6px; font-size: 0.65rem; font-weight: 600; background: rgba(108,92,231,0.1); color: var(--accent-light); border: 1px solid rgba(108,92,231,0.15); }
+
+        @media (max-width: 768px) {
+            .timeline {
+                flex-direction: column;
+                gap: 1.5rem;
+                overflow-x: visible;
+                padding-left: 30px;
+                scroll-snap-type: none;
+                position: relative;
+            }
+            .timeline::before {
+                content: '';
+                position: absolute;
+                left: 7px;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background: linear-gradient(to bottom, var(--accent), rgba(108,92,231,0.1));
+            }
+            .tl-item {
+                flex: none;
+                width: 100%;
+                padding-top: 0;
+                text-align: left;
+            }
+            .tl-item::before { display: none; }
+            .tl-dot {
+                position: absolute;
+                top: 6px;
+                left: -26px;
+                transform: none;
+            }
+            .tl-card { height: auto; }
+            .tl-card:hover { transform: translateX(4px); box-shadow: none; }
+        }
 
         /* Sales 2025 */
         .sales-kpi { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
