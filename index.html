@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
     <style>
         :root {
             --bg: #0a0a0f;
@@ -237,6 +238,18 @@
             margin-top: 1.5rem;
         }
 
+        /* Sales 2025 */
+        .sales-kpi { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+        .kpi-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; text-align: center; }
+        .kpi-card h4 { font-size: 1.5rem; font-weight: 800; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .kpi-card p { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem; }
+        .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+        .chart-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; }
+        .chart-box h4 { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; }
+        .chart-box canvas { width: 100% !important; max-height: 280px; }
+        .chart-box.full { grid-column: 1 / -1; }
+        @media (max-width: 768px) { .chart-grid { grid-template-columns: 1fr; } }
+
         /* Campaigns */
         .campaign-grid {
             display: grid;
@@ -359,6 +372,7 @@
             <div class="logo">Gilang Aji Purnomo</div>
             <ul class="links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#sales">Sales 2025</a></li>
                 <li><a href="#campaigns">Campaigns</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -440,6 +454,57 @@
         </div>
     </section>
 
+    <section id="sales">
+        <div class="container">
+            <div class="section-label">— Sales 2025</div>
+            <h2 class="section-title">Data Penjualan <span style="background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Generos</span> 2025</h2>
+            <p class="section-sub">Berdasarkan data real dari spreadsheet penjualan — seluruh angka adalah actual per bulan.</p>
+
+            <div class="sales-kpi">
+                <div class="kpi-card">
+                    <h4>Rp2,5M+</h4>
+                    <p>Total Ad Spend</p>
+                </div>
+                <div class="kpi-card">
+                    <h4>Rp2,9M+</h4>
+                    <p>Total Omset</p>
+                </div>
+                <div class="kpi-card">
+                    <h4>7.793</h4>
+                    <p>Botol Terjual</p>
+                </div>
+                <div class="kpi-card">
+                    <h4>86,84%</h4>
+                    <p>ROAS (CA)</p>
+                </div>
+                <div class="kpi-card">
+                    <h4>17.257</h4>
+                    <p>Total Leads</p>
+                </div>
+            </div>
+
+            <div class="chart-grid">
+                <div class="chart-box">
+                    <h4>📊 Budget vs Omset</h4>
+                    <canvas id="chartOmset"></canvas>
+                </div>
+                <div class="chart-box">
+                    <h4>📈 Lead & Closing</h4>
+                    <canvas id="chartLead"></canvas>
+                </div>
+                <div class="chart-box">
+                    <h4>💸 CPR per Bulan (Cost Per Result)</h4>
+                    <canvas id="chartCPR"></canvas>
+                </div>
+                <div class="chart-box">
+                    <h4>📦 Box Terjual per Bulan</h4>
+                    <canvas id="chartBox"></canvas>
+                </div>
+            </div>
+            <p style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem;">Data penjualan Generos — Januari s/d Desember 2025. Sumber: spreadsheet internal.</p>
+        </div>
+    </section>
+
     <section id="campaigns">
         <div class="container">
             <div class="section-label">— Campaigns</div>
@@ -509,8 +574,9 @@
                 <p>Ada project iklan yang mau didiskusikan? Atau sekedar kenalan? Yuk reach out!</p>
                 <div class="contact-links">
                     <a href="mailto:gilangajipurnomo@gmail.com">✉️ Email</a>
-                    <a href="https://wa.me/6281234567890">💬 WhatsApp</a>
-                    <a href="https://instagram.com/gilangads">📸 Instagram</a>
+                    <a href="https://wa.me/6287732409409">💬 WhatsApp</a>
+                    <a href="https://instagram.com/corazonz99/">📸 Instagram</a>
+                    <a href="https://drive.google.com/file/d/1s76Tt_4hQeKhkSveII1c_EUrcvc09_eQ/view">📄 Lihat CV</a>
                 </div>
             </div>
         </div>
@@ -521,5 +587,77 @@
             © 2026 Gilang Aji Purnomo — Built with ❤️ by Hermes
         </div>
     </footer>
+
+    <script>
+    const months = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+    const budget = [45339900,64581412,124333650,159556950,253777125,281025591,386402208,334655805,251310970,192963132,191461109,252421546];
+    const omset = [69000000,94875000,154875000,194250000,257250000,344250000,479625000,313500000,254250000,240000000,241500000,279000000];
+    const leads = [456,568,883,1282,1758,1844,2591,1860,1497,1390,1285,1843];
+    const closing = [183,249,410,509,677,894,1251,822,660,619,639,732];
+    const boxes = [184,253,413,518,686,918,1279,836,678,640,644,744];
+    const cpr = [99429,113699,140808,124459,144355,152400,149132,179922,167876,138822,148996,136962];
+
+    Chart.defaults.color = '#888899';
+    Chart.defaults.font.family = "'Inter', sans-serif";
+    Chart.defaults.font.size = 11;
+
+    function mkChart(id, type, data, opts) {
+        const ctx = document.getElementById(id).getContext('2d');
+        return new Chart(ctx, { type, data, options: opts });
+    }
+
+    const grid = { color: 'rgba(255,255,255,0.04)' };
+
+    // Bar: Budget vs Omset
+    mkChart('chartOmset', 'bar', {
+        labels: months,
+        datasets: [
+            { label: 'Budget Iklan', data: budget, backgroundColor: 'rgba(108,92,231,0.3)', borderColor: '#6c5ce7', borderWidth: 1, borderRadius: 4 },
+            { label: 'Omset', data: omset, backgroundColor: 'rgba(253,121,168,0.3)', borderColor: '#fd79a8', borderWidth: 1, borderRadius: 4 }
+        ]
+    }, {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'top', labels: { boxWidth: 12, padding: 12 } }, tooltip: { callbacks: { label: ctx => 'Rp ' + (ctx.raw/1000000).toFixed(1) + ' jt' } } },
+        scales: { x: { grid }, y: { grid, ticks: { callback: v => 'Rp' + (v/1000000).toFixed(1) + 'jt' } } }
+    });
+
+    // Line: Leads & Closing
+    mkChart('chartLead', 'line', {
+        labels: months,
+        datasets: [
+            { label: 'Lead', data: leads, borderColor: '#6c5ce7', backgroundColor: 'rgba(108,92,231,0.1)', fill: true, tension: 0.35, pointRadius: 4, pointHoverRadius: 6 },
+            { label: 'Closing', data: closing, borderColor: '#00b894', backgroundColor: 'rgba(0,184,148,0.1)', fill: true, tension: 0.35, pointRadius: 4, pointHoverRadius: 6 }
+        ]
+    }, {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'top', labels: { boxWidth: 12, padding: 12 } }, tooltip: { callbacks: { label: ctx => ctx.raw.toLocaleString('id-ID') + ' orang' } } },
+        scales: { x: { grid }, y: { grid, ticks: { callback: v => v.toLocaleString('id-ID') } } }
+    });
+
+    // Line: CPR
+    mkChart('chartCPR', 'line', {
+        labels: months,
+        datasets: [
+            { label: 'CPR', data: cpr, borderColor: '#fdcb6e', backgroundColor: 'rgba(253,203,110,0.1)', fill: true, tension: 0.35, pointRadius: 5, pointHoverRadius: 7, borderWidth: 2,
+              pointBackgroundColor: cpr.map(v => v > 150000 ? '#fd79a8' : '#00b894') }
+        ]
+    }, {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => 'Rp ' + ctx.raw.toLocaleString('id-ID') } } },
+        scales: { x: { grid }, y: { grid, ticks: { callback: v => 'Rp' + (v/1000).toFixed(0) + 'rb' } } }
+    });
+
+    // Line: Box
+    mkChart('chartBox', 'line', {
+        labels: months,
+        datasets: [
+            { label: 'Box Terjual', data: boxes, borderColor: '#6c5ce7', backgroundColor: 'rgba(108,92,231,0.1)', fill: true, tension: 0.35, pointRadius: 5, pointHoverRadius: 7, borderWidth: 2 }
+        ]
+    }, {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ctx.raw.toLocaleString('id-ID') + ' box' } } },
+        scales: { x: { grid }, y: { grid, ticks: { callback: v => v.toLocaleString('id-ID') } } }
+    });
+    </script>
 </body>
 </html>
