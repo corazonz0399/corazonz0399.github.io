@@ -466,10 +466,6 @@
             .btn-outline { margin-left: 0; margin-top: 1rem; display: inline-block; }
         }
         .wa-float { position: fixed; right: 18px; bottom: 18px; z-index: 50; background: #25d366; color: #fff; text-decoration: none; font-weight: 700; padding: 13px 18px; border-radius: 999px; box-shadow: 0 10px 26px rgba(0,0,0,.35); }
-        .data-table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem; }
-        .data-table th, .data-table td { padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border); text-align: left; }
-        .data-table td:nth-child(2), .data-table td:nth-child(3), .data-table th:nth-child(2), .data-table th:nth-child(3) { text-align: right; }
-        .data-table .total td { border-top: 2px solid var(--accent); font-weight: 700; }
     </style>
     <script type="application/ld+json">
     {
@@ -726,25 +722,11 @@
                     <h4><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:8px;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>Impressions & Reach per Bulan</h4>
                     <canvas id="chartReach2026"></canvas>
                 </div>
-            </div>
-            <div style="margin-top:2rem;">
-                <h3 style="text-align:center;">CPR &amp; Leads per Bulan — Jan–Sep 2026</h3>
-                <table class="data-table">
-                    <thead><tr><th>Bulan</th><th>Leads</th><th>CPR</th></tr></thead>
-                    <tbody>
-                        <tr><td>Jan 2026</td><td>336</td><td>Rp141.701</td></tr>
-                        <tr><td>Feb 2026</td><td>954</td><td>Rp211.886</td></tr>
-                        <tr><td>Mar 2026</td><td>1.264</td><td>Rp219.344</td></tr>
-                        <tr><td>Apr 2026</td><td>1.624</td><td>Rp157.247</td></tr>
-                        <tr><td>Mei 2026</td><td>1.781</td><td>Rp157.417</td></tr>
-                        <tr><td>Jun 2026</td><td>2.614</td><td>Rp166.697</td></tr>
-                        <tr><td>Jul 2026</td><td>3.828</td><td>Rp160.780</td></tr>
-                        <tr><td>Agu 2026</td><td>2.654</td><td>Rp179.235</td></tr>
-                        <tr><td>Sep 2026</td><td>1.657</td><td>Rp169.571</td></tr>
-                        <tr class="total"><td>Total / rata-rata tertimbang</td><td>16.712</td><td>Rp171.769</td></tr>
-                    </tbody>
-                </table>
-                <p style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem;">Sumber: spreadsheet internal ADV Gilang. Hanya CPR + Leads yang ditampilkan.</p>
+                <div class="chart-box full">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:8px;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>CPR &amp; Leads per Bulan (Jan–Sep 2026)</h4>
+                    <canvas id="chartCPRLeads2026"></canvas>
+                    <p style="color:var(--text-muted);font-size:0.85rem;text-align:center;margin-top:0.75rem;">Total Jan–Sep: 16.712 Leads · Rata-rata CPR tertimbang Rp171.769</p>
+                </div>
             </div>
             <p style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem;">*Data s/d September 2026. Sumber: spreadsheet internal ADV Gilang + Engagement.</p>
         </div>
@@ -971,6 +953,19 @@
         responsive: true, maintainAspectRatio: false,
         plugins: { legend: { position: 'top', labels: { boxWidth: 12, padding: 12 } }, tooltip: { callbacks: { label: ctx => ctx.raw.toLocaleString('id-ID') } } },
         scales: { x: { grid }, y: { grid, ticks: { callback: v => (v/1000000).toFixed(0) + ' jt' } } }
+    });
+
+    // Pencapaian 2026: CPR & Leads per Bulan (combo: Leads batang + CPR garis)
+    mkChart('chartCPRLeads2026', 'bar', {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep'],
+        datasets: [
+            { label: 'Leads', data: [336, 954, 1264, 1624, 1781, 2614, 3828, 2654, 1657], yAxisID: 'y', backgroundColor: 'rgba(108,92,231,0.3)', borderColor: '#6c5ce7', borderWidth: 1, borderRadius: 4 },
+            { label: 'CPR', type: 'line', data: [141701, 211886, 219344, 157247, 157417, 166697, 160780, 179235, 169571], yAxisID: 'y1', borderColor: '#fdcb6e', backgroundColor: 'rgba(253,203,110,0.1)', fill: false, tension: 0.35, pointRadius: 4, pointHoverRadius: 6, borderWidth: 2 }
+        ]
+    }, {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'top', labels: { boxWidth: 12, padding: 12 } }, tooltip: { callbacks: { label: ctx => ctx.datasetIndex === 0 ? ctx.raw.toLocaleString('id-ID') + ' leads' : 'Rp ' + ctx.raw.toLocaleString('id-ID') } } },
+        scales: { x: { grid }, y: { grid, ticks: { callback: v => v.toLocaleString('id-ID') } }, y1: { position: 'right', grid: { drawOnChartArea: false }, ticks: { callback: v => 'Rp' + (v/1000).toFixed(0) + 'rb' } } }
     });
     </script>
 </body>
