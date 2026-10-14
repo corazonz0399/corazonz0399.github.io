@@ -75,6 +75,7 @@
             transition: color 0.3s;
         }
         nav .links a:hover { color: var(--text); }
+        nav .nav-cta { display: none; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
 
@@ -457,13 +458,32 @@
 
         @media (max-width: 768px) {
             nav .links { display: none; }
+            nav .nav-cta { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.5rem 1rem; border-radius: 999px; }
             .about-grid { grid-template-columns: 1fr; }
             .expertise-grid { grid-template-columns: 1fr; }
             .hero-stats { gap: 1.5rem; }
             .contact-card { padding: 2rem 1.5rem; }
             .btn-outline { margin-left: 0; margin-top: 1rem; display: inline-block; }
         }
+        .wa-float { position: fixed; right: 18px; bottom: 18px; z-index: 50; background: #25d366; color: #fff; text-decoration: none; font-weight: 700; padding: 13px 18px; border-radius: 999px; box-shadow: 0 10px 26px rgba(0,0,0,.35); }
+        .data-table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem; }
+        .data-table th, .data-table td { padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border); text-align: left; }
+        .data-table td:nth-child(2), .data-table td:nth-child(3), .data-table th:nth-child(2), .data-table th:nth-child(3) { text-align: right; }
+        .data-table .total td { border-top: 2px solid var(--accent); font-weight: 700; }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Gilang Aji Purnomo",
+      "jobTitle": "Meta Ads Specialist",
+      "url": "https://corazonz0399.github.io/",
+      "sameAs": [
+        "https://instagram.com/corazonz99/",
+        "https://www.linkedin.com/in/gilang-aji-purnomo/"
+      ]
+    }
+    </script>
 </head>
 <body>
     <nav>
@@ -477,13 +497,15 @@
                 <li><a href="#skills">Keahlian</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <a href="#contact" class="nav-cta">Hubungi</a>
         </div>
     </nav>
 
     <section class="hero">
         <div class="container hero-content">
             <div class="hero-badge">✦ Meta Ads Specialist</div>
-            <h1>Jangan biarkan dirimu tergantikan oleh AI,<br>tapi <span>bersahabatlah dengan AI</span></h1>
+            <h1>Meta Ads Specialist — <span>Rp816,9 jt ad spend dikelola Agu–Sep 2026</span></h1>
+            <p><em>Jangan biarkan dirimu tergantikan oleh AI, tapi bersahabatlah dengan AI.</em></p>
             <p>Spesialisasi Facebook & Instagram Ads — campaign structuring, creative generation, budget scaling, dan daily optimization untuk brand Generos dan klien lainnya.</p>
             <div class="hero-stats">
                 <div class="stat">
@@ -501,6 +523,7 @@
             </div>
             <div>
                 <a href="#skills" class="btn btn-primary">Lihat Keahlian →</a>
+                <a href="https://wa.me/6287732409409?text=Halo%20Gilang%2C%20saya%20lihat%20portfolio%20Anda%20dan%20tertarik%20diskusi%20soal%20Meta%20Ads." class="btn btn-primary">Chat WhatsApp →</a>
                 <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
             </div>
         </div>
@@ -514,7 +537,7 @@
                     <h2 class="section-title">Digital Marketer<br>yang Suka <span style="color:var(--accent-dark);">Ngoprek Data</span></h2>
                     <p>Halo, saya <strong>Gilang Aji Purnomo</strong>. Saya berkecimpung di dunia digital marketing sejak 2021, dengan fokus utama di Meta Ads (Facebook & Instagram Ads).</p>
                     <p>Saya percaya <em>data-driven decision</em> adalah kunci. Setiap rupiah belanja iklan harus bisa dipertanggungjawabkan — dari CPC, CTR, sampai cost per result. Gak ada istilah "coba-coba" tanpa evaluasi.</p>
-                    <p>Saat ini saya mengelola 4 akun Meta Ads untuk <strong>Generos</strong> dengan total budget Rp15-20 juta per hari, mencapai omzet harian Rp20-25 juta. Sebelumnya saya <strong>Meta Advertiser Leader</strong> di PT. Quantum King Sulaiman, membukukan omzet Rp840 juta dari budget Rp600 juta.</p>
+                    <p>Saat ini saya mengelola 4 akun Meta Ads untuk <strong>Generos</strong>, 2 akun <strong>Generos Milk</strong>, dan 1 akun <strong>Performance Generos</strong>, dengan total budget Rp15-20 juta per hari, mencapai omzet harian Rp20-25 juta. Saya bekerja di <strong>PT. Quantum</strong> — prinsipal dari Generos — sebagai tim marketing dan selling Generos. Sebelumnya saya <strong>Meta Advertiser Leader</strong> di PT. Quantum King Sulaiman, membukukan omzet Rp840 juta dari budget Rp600 juta.</p>
                     <p>Sekarang saya sedang mengembangkan <strong>optimasi AI Agent</strong> untuk iklan dan automasi iklan — bikin proses campaign operation, creative generation, dan daily optimization jadi lebih otomatis dan efisien.</p>
                     <div class="skills-list">
                         <span>Meta Ads</span>
@@ -564,7 +587,7 @@
         <div class="container">
             <div class="section-label">— Career</div>
             <h2 class="section-title">Perjalanan <span style="color:var(--accent-dark);">Karir</span></h2>
-            <p class="section-sub">Dari Social Media Advertiser sampai handle 4 akun dengan total budget Rp15-20 juta/hari.</p>
+            <p class="section-sub">Dari Social Media Advertiser sampai handle 7 akun (4 Generos + 2 Generos Milk + 1 Performance Generos) dengan total budget Rp15-20 juta/hari.</p>
             <div class="timeline">
                 <div class="tl-item">
                     <div class="tl-dot"></div>
@@ -600,7 +623,7 @@
                         <span class="tl-date" style="color:var(--warning);">Jan 2026 — Sekarang</span>
                         <h4>Full Meta Advertiser</h4>
                         <p>PT. Quantum King Sulaiman</p>
-                        <div class="tl-tags"><span>4 Akun</span><span>Budget Rp15-20jt/hari</span><span>AI Optimization</span></div>
+                        <div class="tl-tags"><span>7 Akun</span><span>Budget Rp15-20jt/hari</span><span>AI Optimization</span></div>
                         <p style="margin-top:0.5rem;font-size:0.8rem;color:var(--accent-light);">⚡ Omset harian Rp20-25jt</p>
                     </div>
                 </div>
@@ -634,7 +657,7 @@
                 </div>
                 <div class="kpi-card">
                     <h4>7.793</h4>
-                    <p>Botol Terjual</p>
+                    <p>Box Terjual</p>
                 </div>
                 <div class="kpi-card">
                     <h4>1,15x</h4>
@@ -645,6 +668,7 @@
                     <p>Total Leads</p>
                 </div>
             </div>
+            <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--text-muted);">Konteks ROAS 1,15x: saya handle upper funnel — tugas utama create demand.</p>
 
             <div class="chart-grid">
                 <div class="chart-box">
@@ -672,12 +696,12 @@
         <div class="container">
             <div class="section-label">— Pencapaian 2026</div>
             <h2 class="section-title">Pencapaian Selling Product <span style="color:var(--accent-dark);">2026</span></h2>
-            <p class="section-sub">Data iklan Generos — Agustus s/d Oktober 2026, dari spreadsheet ADV Gilang + Engagement.</p>
+            <p class="section-sub">Data iklan Generos — Agustus s/d September 2026, dari spreadsheet ADV Gilang + Engagement.</p>
 
             <div class="sales-kpi">
                 <div class="kpi-card">
-                    <h4>Rp948,3jt</h4>
-                    <p>Total Ad Spend (Agu–Okt)</p>
+                    <h4>Rp816,9jt</h4>
+                    <p>Total Ad Spend (Agu–Sep)</p>
                 </div>
                 <div class="kpi-card">
                     <h4>56,9 jt</h4>
@@ -691,10 +715,6 @@
                     <h4>Rp14,4 rb</h4>
                     <p>Rata-rata CPM</p>
                 </div>
-                <div class="kpi-card">
-                    <h4>Rp72,1jt</h4>
-                    <p>Awareness Spend (Okt)</p>
-                </div>
             </div>
 
             <div class="chart-grid">
@@ -707,7 +727,26 @@
                     <canvas id="chartReach2026"></canvas>
                 </div>
             </div>
-            <p style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem;">*Oktober 2026 parsial (1–11). Impressions & Reach Oktober belum tersedia di laporan. Sumber: spreadsheet internal ADV Gilang + Engagement.</p>
+            <div style="margin-top:2rem;">
+                <h3 style="text-align:center;">CPR &amp; Leads per Bulan — Jan–Sep 2026</h3>
+                <table class="data-table">
+                    <thead><tr><th>Bulan</th><th>Leads</th><th>CPR</th></tr></thead>
+                    <tbody>
+                        <tr><td>Jan 2026</td><td>336</td><td>Rp141.701</td></tr>
+                        <tr><td>Feb 2026</td><td>954</td><td>Rp211.886</td></tr>
+                        <tr><td>Mar 2026</td><td>1.264</td><td>Rp219.344</td></tr>
+                        <tr><td>Apr 2026</td><td>1.624</td><td>Rp157.247</td></tr>
+                        <tr><td>Mei 2026</td><td>1.781</td><td>Rp157.417</td></tr>
+                        <tr><td>Jun 2026</td><td>2.614</td><td>Rp166.697</td></tr>
+                        <tr><td>Jul 2026</td><td>3.828</td><td>Rp160.780</td></tr>
+                        <tr><td>Agu 2026</td><td>2.654</td><td>Rp179.235</td></tr>
+                        <tr><td>Sep 2026</td><td>1.657</td><td>Rp169.571</td></tr>
+                        <tr class="total"><td>Total / rata-rata tertimbang</td><td>16.712</td><td>Rp171.769</td></tr>
+                    </tbody>
+                </table>
+                <p style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem;">Sumber: spreadsheet internal ADV Gilang. Hanya CPR + Leads yang ditampilkan.</p>
+            </div>
+            <p style="color:var(--text-muted);font-size:0.8rem;text-align:center;margin-top:0.5rem;">*Data s/d September 2026. Sumber: spreadsheet internal ADV Gilang + Engagement.</p>
         </div>
     </section>
 
@@ -742,6 +781,16 @@
                     <p>Bangun landing page, dashboard laporan, dan website company profile — lengkap dengan tracking & automasi data.</p>
                 </div>
             </div>
+            <p style="margin-top:1.5rem;"><strong>Tools yang dipakai sehari-hari:</strong></p>
+            <div class="skills-list" style="margin-top:0.5rem;">
+                <span>Meta Ads Manager</span>
+                <span>Business Manager</span>
+                <span>Pixel/CAPI</span>
+                <span>GA4</span>
+                <span>Sheets/Looker</span>
+                <span>Canva</span>
+                <span>CapCut</span>
+            </div>
         </div>
     </section>
 
@@ -749,13 +798,13 @@
         <div class="container">
             <div class="section-label">— Hasil Nyata</div>
             <h2 class="section-title">Hasil Real dari<br>Campaign yang Dijalankan</h2>
-            <p class="section-sub">Angka dari Meta Ads API — data 30 hari terakhir (per 21 Agustus 2026). Bisa berubah setiap hari.</p>
+            <p class="section-sub">Snapshot contoh hasil campaign (per 21 Agustus 2026) — angka historis, bukan data berjalan.</p>
             <div class="campaign-grid" id="result-list">
                 <div class="campaign-card">
                     <div class="tag">⚡ GENEROS — G1 + G2</div>
                     <h4>Lead Gen Multi-Akun Skala Besar</h4>
-                    <p>Kelola 2 akun Generos paralel — struktur CBO/ABO, daily eval, dan rotasi konten pemenang.</p>
-                    <div class="metric"><span>Spend 30 hari</span><span>Rp370.7jt</span></div>
+                    <p>Contoh: kelola 2 akun Generos paralel — struktur CBO/ABO, daily eval, dan rotasi konten pemenang.</p>
+                    <div class="metric"><span>Spend (snapshot)</span><span>Rp370.7jt</span></div>
                     <div class="metric"><span>Leads</span><span>2.474</span></div>
                     <div class="metric"><span>CPR</span><span class="good">~Rp150rb</span></div>
                 </div>
@@ -763,7 +812,7 @@
                     <div class="tag">⚡ GENMILK — BB BOOSTER</div>
                     <h4>CPR Paling Efisien</h4>
                     <p>Campaign Before-After buat BB Booster GenMilk — cost per lead paling rendah.</p>
-                    <div class="metric"><span>Spend 30 hari</span><span>Rp7.1jt</span></div>
+                    <div class="metric"><span>Spend (snapshot)</span><span>Rp7.1jt</span></div>
                     <div class="metric"><span>Leads</span><span>108</span></div>
                     <div class="metric"><span>CPR</span><span class="good">~Rp66rb</span></div>
                 </div>
@@ -771,7 +820,7 @@
                     <div class="tag">⚡ GENMILK — PERTUMBUHAN</div>
                     <h4>Volume Lead Terbesar</h4>
                     <p>Isu "Anak Dibully" jadi pendorong utama — lead generation konsisten tiap hari.</p>
-                    <div class="metric"><span>Spend 30 hari</span><span>Rp22.4jt</span></div>
+                    <div class="metric"><span>Spend (snapshot)</span><span>Rp22.4jt</span></div>
                     <div class="metric"><span>Leads</span><span>244</span></div>
                     <div class="metric"><span>CPR</span><span class="good">~Rp92rb</span></div>
                 </div>
@@ -796,9 +845,9 @@
                     <p><a href="https://gigas.web.id" target="_blank" rel="noopener" style="color:var(--accent);">gigas.web.id ↗</a></p>
                 </div>
                 <div class="campaign-card">
-                    <h4><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:8px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Portfolio Ini</h4>
-                    <p>Portfolio pribadi — data sales & campaign real yang di-update dari hasil harian.</p>
-                    <p><a href="https://corazonz0399.github.io" target="_blank" rel="noopener" style="color:var(--accent);">corazonz0399.github.io ↗</a></p>
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:8px;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>JasaGIGAS</h4>
+                    <p>Jasa pembuatan company profile untuk UMKM — 6 gaya galeri, harga mulai Rp50rb.</p>
+                    <p><a href="https://jasagigas.web.id" target="_blank" rel="noopener" style="color:var(--accent);">jasagigas.web.id ↗</a></p>
                 </div>
             </div>
         </div>
@@ -811,10 +860,12 @@
                 <p>Ada project iklan yang mau didiskusikan? Atau sekedar kenalan? Yuk reach out!</p>
                 <div class="contact-links">
                     <a href="mailto:gilangajipurnomo@gmail.com">✉️ Email</a>
-                    <a href="https://wa.me/6287732409409">💬 WhatsApp</a>
+                    <a href="https://wa.me/6287732409409?text=Halo%20Gilang%2C%20saya%20lihat%20portfolio%20Anda%20dan%20tertarik%20diskusi%20soal%20Meta%20Ads.">💬 WhatsApp</a>
                     <a href="https://instagram.com/corazonz99/">📸 Instagram</a>
+                    <a href="https://www.linkedin.com/in/gilang-aji-purnomo/">💼 LinkedIn</a>
                     <a href="https://drive.google.com/file/d/1wcn1nbPrpE5y_ZDZTuQX4TIyJPaZXtgu/view?usp=drive_link">📄 Lihat CV</a>
                 </div>
+                <p style="margin-top:1rem;font-size:0.9rem;">🟢 Open to Work (LinkedIn)</p>
             </div>
         </div>
     </section>
@@ -824,6 +875,8 @@
             © 2026 Gilang Aji Purnomo — Built with ❤️ by Hermes
         </div>
     </footer>
+
+    <a class="wa-float" href="https://wa.me/6287732409409?text=Halo%20Gilang%2C%20saya%20lihat%20portfolio%20Anda%20dan%20tertarik%20diskusi%20soal%20Meta%20Ads.">💬 Chat WhatsApp</a>
 
     <script>
     const months = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
@@ -897,9 +950,9 @@
     });
     // Pencapaian 2026: Ad Spend per Bulan
     mkChart('chartSpend2026', 'bar', {
-        labels: ['Agu', 'Sep', 'Okt*'],
+        labels: ['Agu', 'Sep'],
         datasets: [
-            { label: 'Ad Spend', data: [434866152, 381988613, 131475388], backgroundColor: 'rgba(108,92,231,0.3)', borderColor: '#6c5ce7', borderWidth: 1, borderRadius: 4 }
+            { label: 'Ad Spend', data: [434866152, 381988613], backgroundColor: 'rgba(108,92,231,0.3)', borderColor: '#6c5ce7', borderWidth: 1, borderRadius: 4 }
         ]
     }, {
         responsive: true, maintainAspectRatio: false,
